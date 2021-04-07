@@ -99,7 +99,9 @@ export default {
 		padding: 1em;
 	}
 	.iconPicker__body {
-		position: relative;
+		position: absolute;
+		z-index: 999;
+		background-color: white;
 		max-height: 250px;
 		overflow: auto;
 		padding: 1em 0 1em 1em;
