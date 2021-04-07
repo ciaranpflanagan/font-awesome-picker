@@ -97,6 +97,7 @@ export default {
 	.iconPicker__header input {
 		width: 100%;
 		padding: 1em;
+		background-color: white !important;
 	}
 	.iconPicker__body {
 		position: absolute;
@@ -109,18 +110,21 @@ export default {
 		border: 1px solid #ccc;
 	}
 	.iconPicker__icons {
-		display: table;
+		display: flex;
+		flex-direction: row;
+		max-width: inherit;
+		flex-wrap: wrap;
+		flex-grow: 2;
+		justify-content: center;
 	}
 	.iconPicker__icons .item {
-		float: left;
+		flex: 1 0 30%;
 	    width: 40px;
 	    height: 40px;
-	    padding: 12px;
-	    margin: 0 12px 12px 0;
+	    padding: 12px 1em;
 	    text-align: center;
 	    border-radius: 3px;
 	    font-size: 14px;
-	    box-shadow: 0 0 0 1px #ddd;
 	    color: inherit;
 	}
 	.iconPicker__icons .item.selected {
