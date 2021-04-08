@@ -1,7 +1,7 @@
 <template>
 	<div id="iconPicker">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" v-model="searchBar" @keyup="filterIcons($event)">
+			<input type="text" :placeholder="searchPlaceholder" @keyup="filterIcons($event)">
 		</div>
 		<div v-if="bodyShow" class="iconPicker__body">
 			<div class="iconPicker__icons">
@@ -29,6 +29,7 @@ export default {
 		return {
 			selected: '',
 			icons,
+			searchVal: '',
 		};
 	},
 	computed: {
@@ -36,7 +37,7 @@ export default {
 			return this.seachbox || 'search box';
 		},
 		bodyShow () {
-			return (this.searchBar !== '' && this.searchBar.length !== 0);
+			return (this.searchVal !== '' && this.searchVal.length !== 0);
 		},
 	},
 	methods: {
@@ -67,6 +68,7 @@ export default {
 		},
 		filterIcons (event) {
 			const search = event.target.value.trim();
+			this.searchVal = search;
 			let filter = [];
 
 			if (search.length > 3) {
