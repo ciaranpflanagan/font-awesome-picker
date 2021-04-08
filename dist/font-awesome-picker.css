@@ -2,7 +2,7 @@
 #iconPicker {
 	position: relative;
 	max-width: 292px;
-	background: #f3f3f3;
+	/* background: #f3f3f3; */
 }
 .iconPicker__header {
 	/* padding: 1em; */
@@ -36,14 +36,17 @@
 	flex: 1 0 30%;
     width: 40px;
     height: 40px;
-    padding: 12px 1em;
+    padding: 7px 1em;
     text-align: center;
     border-radius: 3px;
     font-size: 14px;
     color: inherit;
 }
 .iconPicker__icons .item.selected {
-	background: #ccc;
+	box-sizing: border-box;
+	border: 2px solid #F78828 !important;
+	outline-offset: -2px;
+	border-radius: 5px !important;
 }
 .iconPicker__icons .item i {
 	box-sizing: content-box;
