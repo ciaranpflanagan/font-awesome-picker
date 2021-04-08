@@ -1,9 +1,9 @@
 <template>
 	<div id="iconPicker">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @keyup="filterIcons($event)">
+			<input type="text" :placeholder="searchPlaceholder" v-model="searchBar" @keyup="filterIcons($event)">
 		</div>
-		<div class="iconPicker__body">
+		<div v-if="bodyShow" class="iconPicker__body">
 			<div class="iconPicker__icons">
 				<a
 					href="#"
@@ -34,6 +34,9 @@ export default {
 	computed: {
 		searchPlaceholder () {
 			return this.seachbox || 'search box';
+		},
+		bodyShow () {
+			return (this.searchBar !== '' && this.searchBar.length !== 0);
 		},
 	},
 	methods: {
@@ -91,13 +94,12 @@ export default {
 	}
 	.iconPicker__header {
 		padding: 1em;
-		border-radius: 8px 8px 0 0;
-		border: 1px solid #ccc;
 	}
 	.iconPicker__header input {
 		width: 100%;
 		padding: 1em;
 		background-color: white !important;
+		color: black;
 	}
 	.iconPicker__body {
 		position: absolute;

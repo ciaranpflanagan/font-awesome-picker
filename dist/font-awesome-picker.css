@@ -6,13 +6,12 @@
 }
 .iconPicker__header {
 	padding: 1em;
-	border-radius: 8px 8px 0 0;
-	border: 1px solid #ccc;
 }
 .iconPicker__header input {
 	width: 100%;
 	padding: 1em;
 	background-color: white !important;
+	color: black;
 }
 .iconPicker__body {
 	position: absolute;
