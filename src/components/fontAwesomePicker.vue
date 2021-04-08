@@ -1,7 +1,7 @@
 <template>
 	<div id="iconPicker">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @keyup="filterIcons($event)">
+			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)">
 		</div>
 		<div v-if="showPicker" v-click-outside="outside" class="iconPicker__body">
 			<div class="iconPicker__icons">
@@ -86,6 +86,7 @@ export default {
 			}
 		},
 		openPicker () {
+			console.log('openPicker', this.showPicker);
 			this.showPicker = true;
 		},
 	},
