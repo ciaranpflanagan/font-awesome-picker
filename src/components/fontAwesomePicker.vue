@@ -95,18 +95,19 @@ export default {
 		background: #f3f3f3;
 	}
 	.iconPicker__header {
-		padding: 1em;
+		/* padding: 1em; */
 	}
 	.iconPicker__header input {
-		width: 100%;
+		/* width: 100%;
 		padding: 1em;
 		background-color: white !important;
-		color: black;
+		color: black !important; */
 	}
 	.iconPicker__body {
 		position: absolute;
 		z-index: 999;
-		background-color: white;
+		background-color: #1B222D;
+		color: white;
 		max-height: 250px;
 		overflow: auto;
 		padding: 1em 0 1em 1em;
