@@ -1,9 +1,9 @@
 <template>
-	<div id="iconPicker">
+	<div id="iconPicker" v-click-outside="outside">
 		<div class="iconPicker__header">
 			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)">
 		</div>
-		<div v-if="showPicker" v-click-outside="outside" class="iconPicker__body">
+		<div v-if="showPicker" class="iconPicker__body">
 			<div class="iconPicker__icons">
 				<a
 					href="#"
