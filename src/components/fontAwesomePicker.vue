@@ -1,9 +1,9 @@
 <template>
 	<div id="iconPicker">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @keyup="filterIcons($event)">
+			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @keyup="filterIcons($event)">
 		</div>
-		<div v-if="bodyShow" class="iconPicker__body">
+		<div v-if="showPicker" v-click-outside="outside" class="iconPicker__body">
 			<div class="iconPicker__icons">
 				<a
 					href="#"
@@ -30,17 +30,18 @@ export default {
 			selected: '',
 			icons,
 			searchVal: '',
+			showPicker: false,
 		};
 	},
 	computed: {
 		searchPlaceholder () {
 			return this.seachbox || 'search box';
 		},
-		bodyShow () {
-			return (this.searchVal !== '' && this.searchVal.length !== 0);
-		},
 	},
 	methods: {
+		outside () {
+			if (this.showPicker !== false) this.showPicker = false;
+		},
 		getIcon (icon, key) {
 			this.selected = key;
 			// NEED TO FIX CONVERT METHOD
@@ -83,6 +84,39 @@ export default {
 			if (filter.length > 0) {
 				this.icons = filter;
 			}
+		},
+		openPicker () {
+			this.showPicker = true;
+		},
+	},
+	directives: {
+		'click-outside': {
+			bind: function (el, binding, vNode) {
+				// Provided expression must evaluate to a function.
+				if (typeof binding.value !== 'function') {
+					const compName = vNode.context.name;
+					let warn = `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`;
+					if (compName) { warn += `Found in component '${compName}'`; }
+					console.warn(warn);
+				}
+				// Define Handler and cache it on the element
+				const bubble = binding.modifiers.bubble;
+				const handler = (e) => {
+					if (bubble || (!el.contains(e.target) && el !== e.target)) {
+						binding.value(e);
+					}
+				};
+				el.__vueClickOutside__ = handler;
+
+				// add Event Listeners
+				document.addEventListener('click', handler);
+			},
+
+			unbind: function (el, binding) {
+				// Remove Event Listeners
+				document.removeEventListener('click', el.__vueClickOutside__);
+				el.__vueClickOutside__ = null;
+			},
 		},
 	},
 };
