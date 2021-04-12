@@ -7,10 +7,10 @@
 			<div class="iconPicker__icons">
 				<a
 					href="#"
-					@click.stop.prevent="getIcon(icon.value, icon.name)"
-					:class="`item ${selected === icon.name ? 'selected' : ''}`"
-					v-for="icon in icons"
-					:key="icon.value"
+					@click.stop.prevent="getIcon(icon.value, icon.name, index)"
+					:class="`item ${selectedId === icon.name ? 'selected' : ''}`"
+					v-for="(icon, index) in icons"
+					:key="index"
 				>
 					<i :class="icon.className"></i>
 				</a>
@@ -28,6 +28,7 @@ export default {
 	data () {
 		return {
 			selected: '',
+			selectedId: null,
 			icons,
 			searchVal: '',
 			showPicker: false,
@@ -42,8 +43,9 @@ export default {
 		outside () {
 			if (this.showPicker !== false) this.showPicker = false;
 		},
-		getIcon (icon, key) {
+		getIcon (icon, key, id) {
 			this.selected = key;
+			this.selectedId = id;
 			// NEED TO FIX CONVERT METHOD
 			// this.convert(icon);
 			this.selectIcon(icon.toUpperCase());
