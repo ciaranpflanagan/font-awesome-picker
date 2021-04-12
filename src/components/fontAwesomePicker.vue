@@ -48,7 +48,7 @@ export default {
 			this.selectedId = id;
 			// NEED TO FIX CONVERT METHOD
 			// this.convert(icon);
-			this.selectIcon(icon.toUpperCase());
+			this.selectIcon(icon);
 		},
 		convert (value) {
 			const newValue = value
