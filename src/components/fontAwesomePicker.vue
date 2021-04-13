@@ -7,8 +7,8 @@
 			<div class="iconPicker__icons">
 				<a
 					href="#"
-					@click.stop.prevent="getIcon(icon.value, icon.name, index)"
-					:class="`item ${selectedId === icon.name ? 'selected' : ''}`"
+					@click.stop.prevent="getIcon(icon, index)"
+					:class="`item ${selectedId === index ? 'selected' : ''}`"
 					v-for="(icon, index) in icons"
 					:key="index"
 				>
@@ -27,7 +27,8 @@ export default {
 	props: ['seachbox'],
 	data () {
 		return {
-			selected: '',
+			selectedName: '',
+			selectedClass: '',
 			selectedId: null,
 			icons,
 			searchVal: '',
@@ -43,8 +44,9 @@ export default {
 		outside () {
 			if (this.showPicker !== false) this.showPicker = false;
 		},
-		getIcon (icon, key, id) {
-			this.selected = key;
+		getIcon (icon, id) {
+			this.selectedName = icon.name;
+			this.selectedClass = icon.className;
 			this.selectedId = id;
 			// NEED TO FIX CONVERT METHOD
 			// this.convert(icon);
@@ -64,7 +66,8 @@ export default {
 		},
 		selectIcon (value) {
 			const result = {
-				className: this.selected,
+				name: this.selectedName,
+				className: this.selectedClass,
 				cssValue: value,
 			};
 			this.$emit('selectIcon', result);
