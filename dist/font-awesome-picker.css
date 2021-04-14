@@ -1,53 +1,60 @@
 
 #iconPicker {
-	position: relative;
-	max-width: 292px;
-	/* background: #f3f3f3; */
+		position: relative;
+		max-width: 292px;
+		/* background: #f3f3f3; */
 }
 .iconPicker__header {
-	/* padding: 1em; */
+		/* padding: 1em; */
 }
 .iconPicker__header input {
-	/* width: 100%;
-	padding: 1em;
-	background-color: white !important;
-	color: black !important; */
+		/* width: 100%;
+		padding: 1em;
+		background-color: white !important;
+		color: black !important; */
 }
 .iconPicker__body {
-	position: absolute;
-	z-index: 999;
-	background-color: #1B222D;
-	color: white;
-	max-height: 250px;
-	overflow: auto;
-	padding: 1em 0 1em 1em;
-	border-radius: 0 0 8px 8px;
-	border: 1px solid #ccc;
+		position: absolute;
+		z-index: 999;
+		background-color: #1B222D;
+		color: white;
+		max-height: 250px;
+		overflow: auto;
+		padding: 1em 0 1em 1em;
+		border-radius: 0 0 8px 8px;
+		border: 1px solid #ccc;
 }
 .iconPicker__icons {
-	display: flex;
-	flex-direction: row;
-	max-width: inherit;
-	flex-wrap: wrap;
-	flex-grow: 2;
-	justify-content: center;
+		display: flex;
+		flex-direction: row;
+		max-width: inherit;
+		flex-wrap: wrap;
+		flex-grow: 2;
+		justify-content: center;
 }
 .iconPicker__icons .item {
-	flex: 1 0 30%;
-    width: 40px;
-    height: 40px;
-    padding: 7px 1em;
-    text-align: center;
-    border-radius: 3px;
-    font-size: 14px;
-    color: inherit;
+		flex: 1 0 30%;
+	    width: 40px;
+	    height: 40px;
+	    padding: 7px 1em;
+	    text-align: center;
+	    border-radius: 3px;
+	    font-size: 14px;
+	    color: inherit;
 }
 .iconPicker__icons .item.selected {
-	box-sizing: border-box;
-	border: 2px solid #F78828 !important;
-	outline-offset: -2px;
-	border-radius: 5px !important;
+		box-sizing: border-box;
+		border: 2px solid #F78828 !important;
+		outline-offset: -2px;
+		border-radius: 5px !important;
 }
 .iconPicker__icons .item i {
-	box-sizing: content-box;
+		box-sizing: content-box;
+}
+.input-icon {
+        float: right;
+        margin-right: 6px;
+        position: relative;
+        z-index: 2;
+        color: white;
 }
