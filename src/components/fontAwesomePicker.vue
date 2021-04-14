@@ -1,7 +1,7 @@
 <template>
 	<div id="iconPicker" v-click-outside="outside">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)"><span class="input-icon " :class="selectedIcon" />
+			<input type="text" :placeholder="shownIcon" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)"><span class="input-icon " :class="shownIcon" />
 		</div>
 		<div v-if="showPicker" class="iconPicker__body">
 			<div class="iconPicker__icons">
@@ -36,8 +36,8 @@ export default {
 		};
 	},
 	computed: {
-		searchPlaceholder () {
-			return this.seachbox || 'search box';
+		shownIcon () {
+			return (this.selectedId === null) ? this.selectedIcon : this.selectedClass;
 		},
 	},
 	methods: {
@@ -184,6 +184,7 @@ export default {
     .input-icon {
         float: right;
         margin-right: 6px;
+		margin-top: -38px;
         position: relative;
         z-index: 2;
         color: white;

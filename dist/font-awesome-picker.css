@@ -54,6 +54,7 @@
 .input-icon {
         float: right;
         margin-right: 6px;
+		margin-top: -38px;
         position: relative;
         z-index: 2;
         color: white;
