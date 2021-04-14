@@ -1,7 +1,7 @@
 <template>
 	<div id="iconPicker" v-click-outside="outside">
 		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)">
+			<input type="text" :placeholder="searchPlaceholder" @click="openPicker" @focus="openPicker" @keyup="filterIcons($event)"><span class="input-icon " :class="selectedIcon" />
 		</div>
 		<div v-if="showPicker" class="iconPicker__body">
 			<div class="iconPicker__icons">
@@ -24,7 +24,7 @@ import icons from './icons';
 
 export default {
 	name: 'fontAwesomePicker',
-	props: ['seachbox'],
+	props: ['seachbox', 'selectedIcon'],
 	data () {
 		return {
 			selectedName: '',
@@ -181,4 +181,11 @@ export default {
 	.iconPicker__icons .item i {
 		box-sizing: content-box;
 	}
+    .input-icon {
+        float: right;
+        margin-right: 6px;
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
 </style>
