@@ -65,6 +65,21 @@ const icons = [
 		className: 'fal fa-check-square',
 		value: 'f14a',
 	},
+	{
+		name: 'check-circle',
+		className: 'fas fa-check-circle',
+		value: 'f058',
+	},
+	{
+		name: 'check-square',
+		className: 'fas fa-check-square',
+		value: 'f14a',
+	},
+	{
+		name: 'check',
+		className: 'fas fa-check',
+		value: 'f00c',
+	},
 
 	// Arrows
 	{
@@ -191,6 +206,11 @@ const icons = [
 		name: 'chevron-double-right',
 		className: 'fad fa-chevron-double-right',
 		value: ['f324', '10f324'],
+	},
+	{
+		name: 'arrow-right',
+		className: 'fas fa-arrow-right',
+		value: 'f061',
 	},
 
 	// Dots
