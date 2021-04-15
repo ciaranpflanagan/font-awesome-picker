@@ -249,5 +249,87 @@ const icons = [
 		className: 'fal fa-circle',
 		value: 'f111',
 	},
+
+	// Cross
+	{
+		name: 'times-square',
+		className: 'fas fa-times-square',
+		value: 'f2d3',
+	},
+	{
+		name: 'times-square',
+		className: 'far fa-times-square',
+		value: 'f2d3',
+	},
+	{
+		name: 'times-square',
+		className: 'fal fa-times-square',
+		value: 'f2d3',
+	},
+	{
+		name: 'times-square',
+		className: 'fad fa-times-square',
+		value: ['f2d3', '10f2d3'],
+	},
+	{
+		name: 'times-octagon',
+		className: 'fas fa-times-octagon',
+		value: 'f2f0',
+	},
+	{
+		name: 'times-octagon',
+		className: 'far fa-times-octagon',
+		value: 'f2f0',
+	},
+	{
+		name: 'times-octagon',
+		className: 'fal fa-times-octagon',
+		value: 'f2f0',
+	},
+	{
+		name: 'times-octagon',
+		className: 'fad fa-times-octagon',
+		value: ['f2f0', '10f2f0'],
+	},
+	{
+		name: 'times-circle',
+		className: 'far fa-times-circle',
+		value: 'f057',
+	},
+	{
+		name: 'times-circle',
+		className: 'fal fa-times-circle',
+		value: 'f057',
+	},
+	{
+		name: 'times-circle',
+		className: 'fas fa-times-circle',
+		value: 'f057',
+	},
+	{
+		name: 'times-circle',
+		className: 'fad fa-times-circle',
+		value: ['f057', '10f057'],
+	},
+	{
+		name: 'times',
+		className: 'fas fa-times',
+		value: 'f00d',
+	},
+	{
+		name: 'times',
+		className: 'far fa-times',
+		value: 'f00d',
+	},
+	{
+		name: 'times',
+		className: 'fal fa-times',
+		value: 'f00d',
+	},
+	{
+		name: 'times',
+		className: 'fad fa-times',
+		value: ['f00d', '10f00d'],
+	},
 ];
 export { icons as default };
