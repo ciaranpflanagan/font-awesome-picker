@@ -168,16 +168,6 @@ const icons = [
 		value: ['f32b', '10f32b'],
 	},
 	{
-		name: 'chevron-square-right',
-		className: 'fad fa-chevron-square-right',
-		value: ['f32b', '10f32b'],
-	},
-	{
-		name: 'chevron-right',
-		className: 'far fa-chevron-right',
-		value: 'f054',
-	},
-	{
 		name: 'chevron-right',
 		className: 'far fa-chevron-right',
 		value: 'f054',
@@ -191,11 +181,6 @@ const icons = [
 		name: 'chevron-right',
 		className: 'fad fa-chevron-right',
 		value: ['f054', '10f054'],
-	},
-	{
-		name: 'chevron-double-right',
-		className: 'fas fa-chevron-double-right',
-		value: 'f324',
 	},
 	{
 		name: 'chevron-double-right',
