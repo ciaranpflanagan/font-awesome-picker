@@ -178,11 +178,6 @@ const icons = [
 		value: ['f054', '10f054'],
 	},
 	{
-		name: 'chevron-right',
-		className: 'fad fa-chevron-right',
-		value: ['f054', '10f054'],
-	},
-	{
 		name: 'chevron-double-right',
 		className: 'fas fa-chevron-double-right',
 		value: 'f324',
